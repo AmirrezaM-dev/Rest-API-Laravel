@@ -1,0 +1,98 @@
+body{
+	font-family: "Neutra Text" !important;
+}
+.customBg-black{
+	background-color: #322625 !important;
+}
+.customBg-grey{
+	background-color: #ebebeb !important;
+}
+.customBg-grey th{
+	background-color: #ebebeb !important;
+}
+.customBg-blue{
+	background-color: #c0e3e5 !important;
+}
+.customBg-blue td{
+	background-color: #c0e3e5 !important;
+}
+.customBg-yellow{
+	background-color: #fdc936 !important;
+}
+.customColor-black{
+	color: #322625 !important;
+}
+.customColor-grey{
+	color: #ebebeb !important;
+}
+.customColor-blue{
+	color: #c0e3e5 !important;
+}
+.customColor-yellow{
+	color: #fdc936 !important;
+}
+/* DataTable.css */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.search-input {
+  width: 200px;
+}
+
+/* BreadcrumbComponent.css */
+
+.custom-breadcrumb {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+.custom-breadcrumb .breadcrumb{
+	margin-bottom: 0 !important;
+}
+
+.custom-breadcrumb .breadcrumb-item a {
+  color: #007bff; /* Blue text color for links */
+  text-decoration: none;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.custom-breadcrumb .breadcrumb-item.active {
+  color: #495057; /* Dark text color for active item */
+  font-weight: bold;
+}
+
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.pagination .page-item .page-link{
+	background-color: #ebebeb;
+	color: #322625;
+}
+.pagination .page-item.active .page-link{
+	background-color: #c0e3e5;
+}
