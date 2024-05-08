@@ -3,7 +3,12 @@
 ### 2. Laravel
 Coming soon
 
-| Header 1 | Header 2 | Header 3 |
+| Users | Projects | Timesheets |
 | -------- | -------- | -------- |
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+| first_name | name | task_name |
+| last_name | department | date |
+| date_of_birth | start_date | hours |
+| gender | end_date | project_id |
+| email | status | user_id |
+| password |
+
