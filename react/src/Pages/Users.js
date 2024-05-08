@@ -162,8 +162,8 @@ const Users = () => {
 			</Breadcrumb>
 
 			{/* Filter Section */}
-			<div className="filter-container">
-				<Form.Group className="filter-dropdown">
+			<div className="d-md-flex align-items-center justify-content-evenly text-center mb-3">
+				<Form.Group className="filter-dropdown my-2">
 					<Dropdown>
 						<Dropdown.Toggle
 							variant="primary"
@@ -184,7 +184,8 @@ const Users = () => {
 						</Dropdown.Menu>
 					</Dropdown>
 				</Form.Group>
-				<div className="search-container">
+
+				<div className="search-container my-2">
 					{showSearchInput && (
 						<Form.Control
 							type="text"
@@ -195,10 +196,128 @@ const Users = () => {
 					)}
 					<FontAwesomeIcon
 						icon={showSearchInput ? faX : faSearch}
-						className="mx-2 cursor-pointer"
+						className="px-2 cursor-pointer mx-auto"
 						onClick={handleSearchIconClick}
 					/>
 				</div>
+
+				<Form.Group className="filter-dropdown my-2">
+					<Dropdown>
+						<Dropdown.Toggle
+							disabled={
+								!filteredAges.filter((_) => _ !== "All").length
+							}
+							variant="primary"
+							className="customBg-black customColor-yellow"
+							id="dropdown-category"
+						>
+							Age: {age}
+						</Dropdown.Toggle>
+						<Dropdown.Menu>
+							{/* Search input */}
+							<Form.Control
+								type="number"
+								placeholder="Search ages..."
+								value={ageSearchQuery}
+								onChange={(e) =>
+									setAgeSearchQuery(e.target.value)
+								}
+								style={{ marginBottom: "8px" }}
+							/>
+
+							{/* Display filtered age options */}
+							{filteredAges.map((age, i) => (
+								<Dropdown.Item
+									key={i}
+									onClick={() => handleAgeChange(age)}
+								>
+									{age}
+								</Dropdown.Item>
+							))}
+						</Dropdown.Menu>
+					</Dropdown>
+				</Form.Group>
+
+				<Form.Group className="filter-dropdown my-2">
+					<Dropdown>
+						<Dropdown.Toggle
+							disabled={
+								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
+								!genders.filter((_) => _ !== "All").length
+							}
+							variant="primary"
+							className="customBg-black customColor-yellow"
+							id="dropdown-category"
+						>
+							Gender: {gender}
+						</Dropdown.Toggle>
+						<Dropdown.Menu>
+							{genders?.map((gender, i) => (
+								<Dropdown.Item
+									key={i}
+									onClick={() => handleGenderChange(gender)}
+								>
+									{gender?.charAt(0).toUpperCase() +
+										gender?.slice(1)}
+								</Dropdown.Item>
+							))}
+						</Dropdown.Menu>
+					</Dropdown>
+				</Form.Group>
+
+				<Form.Group className="filter-dropdown my-2">
+					<Dropdown>
+						<Dropdown.Toggle
+							disabled={
+								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
+								!bloodGroups.filter((_) => _ !== "All").length
+							}
+							variant="primary"
+							className="customBg-black customColor-yellow"
+							id="dropdown-category"
+						>
+							Blood Group: {bloodGroup}
+						</Dropdown.Toggle>
+						<Dropdown.Menu>
+							{bloodGroups?.map((bloodGroup, i) => (
+								<Dropdown.Item
+									key={i}
+									onClick={() =>
+										handleBloodGroupChange(bloodGroup)
+									}
+								>
+									{bloodGroup}
+								</Dropdown.Item>
+							))}
+						</Dropdown.Menu>
+					</Dropdown>
+				</Form.Group>
+
+				<Form.Group className="filter-dropdown my-2">
+					<Dropdown>
+						<Dropdown.Toggle
+							disabled={
+								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
+								!eyeColors.filter((_) => _ !== "All").length
+							}
+							variant="primary"
+							className="customBg-black customColor-yellow"
+							id="dropdown-category"
+						>
+							Eye color: {eyeColor}
+						</Dropdown.Toggle>
+						<Dropdown.Menu>
+							{eyeColors?.map((color, i) => (
+								<Dropdown.Item
+									key={i}
+									onClick={() => handleEyeColorChange(color)}
+								>
+									{color}
+								</Dropdown.Item>
+							))}
+						</Dropdown.Menu>
+					</Dropdown>
+				</Form.Group>
 
 				{/* professional age filter */}
 				{/* <Row>
@@ -239,123 +358,6 @@ const Users = () => {
 						</Button>
 					</Col>
 				</Row> */}
-
-				<Form.Group className="filter-dropdown">
-					<Dropdown>
-						<Dropdown.Toggle
-							disabled={
-								!filteredAges.filter((_) => _ !== "All").length
-							}
-							variant="primary"
-							className="customBg-black customColor-yellow"
-							id="dropdown-category"
-						>
-							Age: {age}
-						</Dropdown.Toggle>
-						<Dropdown.Menu>
-							{/* Search input */}
-							<Form.Control
-								type="number"
-								placeholder="Search ages..."
-								value={ageSearchQuery}
-								onChange={(e) =>
-									setAgeSearchQuery(e.target.value)
-								}
-								style={{ marginBottom: "8px" }}
-							/>
-
-							{/* Display filtered age options */}
-							{filteredAges.map((age, i) => (
-								<Dropdown.Item
-									key={i}
-									onClick={() => handleAgeChange(age)}
-								>
-									{age}
-								</Dropdown.Item>
-							))}
-						</Dropdown.Menu>
-					</Dropdown>
-				</Form.Group>
-
-				<Form.Group className="filter-dropdown">
-					<Dropdown>
-						<Dropdown.Toggle
-							disabled={
-								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
-								!genders.filter((_) => _ !== "All").length
-							}
-							variant="primary"
-							className="customBg-black customColor-yellow"
-							id="dropdown-category"
-						>
-							Gender: {gender}
-						</Dropdown.Toggle>
-						<Dropdown.Menu>
-							{genders?.map((gender, i) => (
-								<Dropdown.Item
-									key={i}
-									onClick={() => handleGenderChange(gender)}
-								>
-									{gender?.charAt(0).toUpperCase() +
-										gender?.slice(1)}
-								</Dropdown.Item>
-							))}
-						</Dropdown.Menu>
-					</Dropdown>
-				</Form.Group>
-
-				<Form.Group className="filter-dropdown">
-					<Dropdown>
-						<Dropdown.Toggle
-							disabled={
-								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
-								!bloodGroups.filter((_) => _ !== "All").length
-							}
-							variant="primary"
-							className="customBg-black customColor-yellow"
-							id="dropdown-category"
-						>
-							Blood Group: {bloodGroup}
-						</Dropdown.Toggle>
-						<Dropdown.Menu>
-							{bloodGroups?.map((bloodGroup, i) => (
-								<Dropdown.Item
-									key={i}
-									onClick={() =>
-										handleBloodGroupChange(bloodGroup)
-									}
-								>
-									{bloodGroup}
-								</Dropdown.Item>
-							))}
-						</Dropdown.Menu>
-					</Dropdown>
-				</Form.Group>
-				<Form.Group className="filter-dropdown">
-					<Dropdown>
-						<Dropdown.Toggle
-							disabled={
-								// Ensure that the eye colors are loaded from the API, excluding the default option, which is 'ALL'.
-								!eyeColors.filter((_) => _ !== "All").length
-							}
-							variant="primary"
-							className="customBg-black customColor-yellow"
-							id="dropdown-category"
-						>
-							Eye color: {eyeColor}
-						</Dropdown.Toggle>
-						<Dropdown.Menu>
-							{eyeColors?.map((color, i) => (
-								<Dropdown.Item
-									key={i}
-									onClick={() => handleEyeColorChange(color)}
-								>
-									{color}
-								</Dropdown.Item>
-							))}
-						</Dropdown.Menu>
-					</Dropdown>
-				</Form.Group>
 			</div>
 
 			{/* Table */}
@@ -401,8 +403,8 @@ const Users = () => {
 			</div>
 
 			{/* Pagination */}
-			<div className="d-flex justify-content-center">
-				<Pagination>
+			<div className="d-flex overflow-auto">
+				<Pagination className="mx-auto">
 					{Array.from({ length: totalPages }).map((_, index) => (
 						<Pagination.Item
 							key={index + 1}
