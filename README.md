@@ -65,5 +65,20 @@ Available models: `users`, `projects`, `timesheets`
 - **Date format**: Use YYYY-MM-DD.
 - **Hours**: Should be Unix timestamp (seconds).
 
+## Assigning a Project to a User
+
+To assign a project to a user, send a `GET` request to `http://localhost:8000/api/projects/assign/{id}` where `{id}` is the ID of the project you want to assign.
+
+This request will assign the authenticated user to the specified project.
+
+Example:
+```
+GET http://localhost:8000/api/projects/assign/123
+```
+
+Replace `123` with the ID of the project you wish to assign to the authenticated user.
+
+**Note:** Ensure that the user is authenticated before making any request.
+
 Feel free to use these endpoints to interact with the API efficiently.
 
