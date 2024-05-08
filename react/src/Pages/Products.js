@@ -241,8 +241,8 @@ const Products = () => {
 			</div>
 
 			{/* Pagination */}
-			<div className="d-flex justify-content-center">
-				<Pagination>
+			<div className="d-flex overflow-auto">
+				<Pagination className="mx-auto">
 					{Array.from({ length: totalPages }).map((_, index) => (
 						<Pagination.Item
 							key={index + 1}
