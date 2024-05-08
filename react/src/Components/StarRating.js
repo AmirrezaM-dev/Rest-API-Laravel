@@ -31,7 +31,7 @@ const StarRating = ({ rating }) => {
 			/>
 		)
 	}
-
+ return <></>
 	return (
 		<div className="star-rating">
 			{stars.map((star, index) => (
