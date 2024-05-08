@@ -4,7 +4,7 @@
 
 ### 2. Laravel
 
-Coming soon
+Unfortunately, I do not have access to a cPanel or PHP hosting to upload the project demo.
 
 ## Installing and Testing the Laravel API
 
