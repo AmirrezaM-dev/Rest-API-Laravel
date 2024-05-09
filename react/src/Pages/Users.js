@@ -394,7 +394,7 @@ const Users = () => {
 						) : (
 							<tr>
 								<td colSpan="9" style={{ textAlign: "center" }}>
-									<FontAwesomeIcon icon={faSpinner} spin />
+									There is no data available in the table.
 								</td>
 							</tr>
 						)}
