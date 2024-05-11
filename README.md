@@ -1,11 +1,3 @@
-### 1. React
-
-[React Demo](https://assessment-gh6j.onrender.com)
-
-### 2. Laravel
-
-Unfortunately, I do not have access to a cPanel or PHP hosting to upload the project demo.
-
 ## Installing and Testing the Laravel API
 
 To install and test the Laravel API, follow these steps:
